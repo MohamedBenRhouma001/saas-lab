@@ -1,0 +1,63 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html>
+<head>
+  <title>Dior Product List</title>
+</head>
+<body>
+  <h1>Dior Product Catalog</h1>
+  <div class="product-card">
+    <h2 class="product-name">Sac Lady Dior Mini</h2>
+    <span class="product-price">$5,200</span>
+    <p class="product-description">Satin brodé de perles à motif Cannage noir</p>
+  </div>
+  <div class="product-card">
+    <h2 class="product-name">Miss Dior Eau de Parfum</h2>
+    <span class="product-price">$120</span>
+    <p class="product-description">Floral and fresh fragrance</p>
+  </div>
+  <div class="product-card">
+    <h2 class="product-name">Diorshow Mascara</h2>
+    <span class="product-price">$29</span>
+    <p class="product-description">Volumizing mascara for bold lashes</p>
+  </div>
+</body>
+</html>

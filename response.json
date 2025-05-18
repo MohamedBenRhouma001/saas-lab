@@ -1,0 +1,50 @@
+[
+  {
+    "id": "25ea60a8-80a8-4298-b64b-0017ddf1e49e",
+    "name": "Dior Addict Lip Glow Balm",
+    "price": "$40.00",
+    "description": "15 Colors",
+    "source": "https://www.sephora.com/brand/dior/all",
+    "timestamp": "2025-05-07T19:47:13.879Z"
+  },
+  {
+    "id": "c5a18640-ed03-4a37-8bea-7cdde76a6d4c",
+    "name": "BACKSTAGE Glow Face Palette",
+    "price": "$48.00",
+    "description": "2 Colors",
+    "source": "https://www.sephora.com/brand/dior/all",
+    "timestamp": "2025-05-07T19:47:13.880Z"
+  },
+  {
+    "id": "0cc01110-771a-4ce8-abda-d8544db3955c",
+    "name": "Dior Addict Lip Maximizer Plumping Gloss",
+    "price": "$40.00",
+    "description": "24 Colors",
+    "source": "https://www.sephora.com/brand/dior/all",
+    "timestamp": "2025-05-07T19:47:13.881Z"
+  },
+  {
+    "id": "38e19fde-db9a-4dea-8d74-3e7c1c8359dd",
+    "name": "Lip Glow Oil",
+    "price": "$40.00",
+    "description": "14 Colors",
+    "source": "https://www.sephora.com/brand/dior/all",
+    "timestamp": "2025-05-07T19:47:13.882Z"
+  },
+  {
+    "id": "34c25c65-e169-43e2-a994-025299d81ada",
+    "name": "Rosy Glow Blush",
+    "price": "$40.00",
+    "description": "8 Colors",
+    "source": "https://www.sephora.com/brand/dior/all",
+    "timestamp": "2025-05-07T19:47:13.882Z"
+  },
+  {
+    "id": "3414a3b9-ed0c-41ba-b2d9-ddb3ebed6a52",
+    "name": "Forever Skin Perfect 24H Multi-Use Foundation Stick",
+    "price": "$52.00",
+    "description": "18 Colors",
+    "source": "https://www.sephora.com/brand/dior/all",
+    "timestamp": "2025-05-07T19:47:13.883Z"
+  }
+]

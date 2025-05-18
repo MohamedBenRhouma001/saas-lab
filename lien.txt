@@ -1,0 +1,2 @@
+https://www.sephora.com/brand/dior/all
+http://localhost:8000/dior-product-list.html
